@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.5 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -6,16 +7,20 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-amber-50: oklch(98.7% 0.022 95.277);
-    --color-gray-900: oklch(21% 0.034 264.665);
-    --color-black: #000;
-    --color-white: #fff;
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-bold: 700;
+    --color-neutral-100: hsl(0, 0%, 93%);
+    --color-neutral-200: hsl(217, 61%, 90%);
+    --color-neutral-900: hsl(227, 75%, 14%);
+    --spacing: 0.25rem;
+    --radius-xs: 0.125rem;
+    --radius-sm: 0.25rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-neutral-0: hsl(200, 60%, 99%);
+    --color-light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --color-dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
   }
 }
 @layer base {
@@ -164,31 +169,150 @@
   }
 }
 @layer utilities {
+  .static {
+    position: static;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .contents {
+    display: contents;
+  }
+  .flex {
+    display: flex;
+  }
+  .table {
+    display: table;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .w-\[90\%\] {
+    width: 90%;
   }
   .w-screen {
     width: 100vw;
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  .max-w-\[2\] {
+    max-width: 2;
   }
-  .text-black {
-    color: var(--color-black);
+  .max-w-\[90\] {
+    max-width: 90;
   }
-  .dark\:bg-gray-900 {
+  .max-w-\[1200\] {
+    max-width: 1200;
+  }
+  .max-w-\[1200px\] {
+    max-width: 1200px;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .resize {
+    resize: both;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-4xl {
+    border-radius: var(--radius-4xl);
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .rounded-xs {
+    border-radius: var(--radius-xs);
+  }
+  .rounded-l-xs {
+    border-top-left-radius: var(--radius-xs);
+    border-bottom-left-radius: var(--radius-xs);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-0 {
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+  }
+  .bg-dark-gradient {
+    background-color: var(--color-dark-gradient);
+  }
+  .bg-light-gradient {
+    background-color: var(--color-light-gradient);
+  }
+  .bg-neutral-0 {
+    background-color: var(--color-neutral-0);
+  }
+  .bg-neutral-100 {
+    background-color: var(--color-neutral-100);
+  }
+  .bg-neutral-200 {
+    background-color: var(--color-neutral-200);
+  }
+  .bg-neutral-900 {
+    background-color: var(--color-neutral-900);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .dark\:bg-dark-gradient {
     &:where(.dark, .dark *) {
-      background-color: var(--color-gray-900);
-    }
-  }
-  .dark\:text-white {
-    &:where(.dark, .dark *) {
-      color: var(--color-white);
+      background-color: var(--color-dark-gradient);
     }
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
+    }
+  }
 }
