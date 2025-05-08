@@ -18,8 +18,18 @@
 
     --color-light-gradient: 180deg, #EBF2FC 0%, #EEF8F9 100%;
     --color-dark-gradient: 180deg, #040918 0%, #091540 100%;
+
+    --breakpoint-2sm: 600px;
 }
 
 body{
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.filter-btn {
+    @apply border-0 outline-none cursor-pointer py-2 px-5 rounded-full bg-neutral-0 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100 shadow-sm;
+}
+
+.filter-btn.active {
+    @apply bg-red-500 text-neutral-0 dark:text-neutral-900;
 }
