@@ -19,6 +19,7 @@
     --color-light-gradient: 180deg, #EBF2FC 0%, #EEF8F9 100%;
     --color-dark-gradient: 180deg, #040918 0%, #091540 100%;
 
+    --breakpoint-3sm: 500px;
     --breakpoint-2sm: 600px;
 }
 

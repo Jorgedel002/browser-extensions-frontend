@@ -25,6 +25,28 @@
                 <button class="filter-btn" id="filterInactive">Inactive</button>
             </div>
         </div>
+        <div class="grid grid-cols-1 3sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 mt-9">
+            <div class="bg-neutral-0 dark:bg-neutral-800 shadow-sm rounded-xl p-4 border-1 border-neutral-200 dark:border-neutral-600">
+                <div class="flex gap-3 items-start">
+                    <img src="assets/img/logo-devlens.svg" alt="">
+                    <div>
+                        <h2 class="font-bold text-lg text-neutral-900 dark:text-neutral-100 mb-1">DevLens</h2>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm md:text-base">Quickly inspect page layouts and visualize element boundaries.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-5 md:mt-12">
+                    <button class="border-1 border-stone-400 font-semibold outline-none cursor-pointer py-2 px-4 text-sm rounded-full text-neutral-900 dark:text-neutral-0">Remove</button>
+                    <label for="" class='relative w-11 h-6 inline-flex'>
+                        <input type="checkbox" id="chk-box" class='w-full h-full opacity-0' />
+                        <span id='toggler' class="absolute w-full h-full bg-stone-300 rounded-full left-0 top-0 cursor-pointer transition-all duration-500 linear dark:bg-neutral-600">
+                          <span class="relative w-full h-full top-0 left-0 bottom-0">
+                            <span id='slider' class='absolute w-[19px] h-[19px] bg-white rounded-full left-1 right-1 top-[2px] bottom-1 cursor-pointer transition-all duration-500 linear'></span>
+                          </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
