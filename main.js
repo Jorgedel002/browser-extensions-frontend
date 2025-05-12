@@ -9,15 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const extensionContainer = document.getElementById("extensionContainer");
 
-    darkModeButton.addEventListener("click", () => {
-        htmlContent.classList.toggle("dark");
-        darkModeIcon.src = htmlContent.classList.contains("dark") ? "assets/img/icon-sun.svg" : "assets/img/icon-moon.svg";
-        logo.style.stroke = htmlContent.classList.contains("dark") ? "#EBF2FC" : "#040918";
-        if(!chkBox.checked){
-            toggle.style.backgroundColor = htmlContent.classList.contains("dark") ? "#545969" : "#d6d3d1";
-        }
-    });
-
     data.forEach(extension => {
         const extensionCard = document.createElement("div");
         extensionCard.id = extension.name;
@@ -31,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
             <div class="flex items-center justify-between mt-5 md:mt-12">
-                <button class="border-1 border-stone-400 font-semibold outline-none cursor-pointer py-2 px-4 text-sm rounded-full text-neutral-900 dark:text-neutral-0" id="removeBtn-${extension.id}">Remove</button>
+                <button class="border-1 border-stone-400 font-semibold cursor-pointer py-2 px-4 text-sm rounded-full text-neutral-900 dark:text-neutral-0 hover:bg-red-500 hover:text-neutral-0 dark:hover:text-neutral-900" id="removeBtn-${extension.id}">Remove</button>
                 <label for="" class='relative w-11 h-6 inline-flex'>
                     <input type="checkbox" id="chk-box-${extension.id}" class='w-full h-full opacity-0' />
                     <span id='toggler-${extension.id}' class="absolute w-full h-full bg-stone-300 rounded-full left-0 top-0 cursor-pointer transition-all duration-500 linear dark:bg-neutral-600">
@@ -77,6 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
         
         removeBtn.addEventListener("click", () => {
             extensionCard.remove();
+        });
+    });
+
+    darkModeButton.addEventListener("click", () => {
+        htmlContent.classList.toggle("dark");
+        darkModeIcon.src = htmlContent.classList.contains("dark") ? "assets/img/icon-sun.svg" : "assets/img/icon-moon.svg";
+        logo.style.stroke = htmlContent.classList.contains("dark") ? "#EBF2FC" : "#040918";
+
+        data.forEach(extension => {
+            const chkBox = document.getElementById(`chk-box-${extension.id}`);
+            const toggle = document.getElementById(`toggler-${extension.id}`);
+            
+            if(chkBox && toggle && !chkBox.checked){
+                toggle.style.backgroundColor = htmlContent.classList.contains("dark") ? "#545969" : "#d6d3d1";
+            }
         });
     });
 

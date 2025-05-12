@@ -28,7 +28,7 @@ body{
 }
 
 .filter-btn {
-    @apply border-0 outline-none cursor-pointer py-2 px-5 rounded-full bg-neutral-0 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100 shadow-sm;
+    @apply border-0 cursor-pointer py-2 px-5 rounded-full bg-neutral-0 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100 shadow-sm hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-neutral-600 dark:hover:text-neutral-0;
 }
 
 .filter-btn.active {
